@@ -9,7 +9,7 @@ import axios from 'axios'
   if (token) {
     axios.defaults.headers.common['Token'] = token;
   } else {
-    axios.defaults.headers.common['Token'] = null;
+    axios.defaults.headers.common['Token'] = '';
   }
 })();
 

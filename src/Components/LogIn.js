@@ -19,7 +19,6 @@ export default function SignupForm() {
         onSubmit: values => {
             axios.post('https://jsonplaceholder.typicode.com/users', values)
                 .then((response) => {
-                    console.log(response.data.email)
                     localStorage.setItem('token', response.data.email);
                 })
                 .catch((error) => {
