@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios'
 
 export default function SignupForm() {
     const formik = useFormik({
@@ -16,7 +17,14 @@ export default function SignupForm() {
             email: Yup.string().email('Invalid email address').required('Required')
         }),
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            axios.post('https://jsonplaceholder.typicode.com/users', values)
+                .then((response) => {
+                    console.log(response.data.email)
+                    localStorage.setItem('token', response.data.email);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         },
     });
     return (
