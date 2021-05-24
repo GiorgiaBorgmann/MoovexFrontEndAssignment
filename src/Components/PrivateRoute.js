@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Posts from './Posts'
 
-function PrivateRoute(props) {
-   console.log(props.token)
+function PrivateRoute() {
+
     return (
         <Route path="/posts">
-            {props.token ?
+
                 <Posts/>
-            : <Redirect to="/" exact />}
+
         </Route>
     );
 };

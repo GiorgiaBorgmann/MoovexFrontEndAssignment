@@ -2,8 +2,10 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 export default function SignupForm() {
+    const history = useHistory()
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -20,6 +22,7 @@ export default function SignupForm() {
             axios.post('https://jsonplaceholder.typicode.com/users', values)
                 .then((response) => {
                     localStorage.setItem('token', response.data.email);
+                    history.push('/posts')
                     window.location.reload()
                 })
                 .catch((error) => {

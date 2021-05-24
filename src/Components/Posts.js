@@ -22,7 +22,7 @@ export default function Posts() {
     const handlePost = () => {
         setShowPosts(false)
     }
-    console.log(savedPosts)
+
     if (posts && showPosts === true) {
         return (
             <div>
