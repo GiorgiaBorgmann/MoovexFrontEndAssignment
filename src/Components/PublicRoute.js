@@ -1,6 +1,7 @@
 import { Route, Redirect } from 'react-router-dom';
 import LogIn from './LogIn'
 
+
 function PublicRoute (props) {
     
     return (

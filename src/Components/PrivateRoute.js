@@ -3,9 +3,9 @@ import { Route, Redirect } from 'react-router-dom';
 import Posts from './Posts'
 
 function PrivateRoute(props) {
-   
+   console.log(props.token)
     return (
-        <Route path="/posts" exact>
+        <Route path="/posts">
             {props.token ?
                 <Posts/>
             : <Redirect to="/" exact />}
@@ -14,3 +14,4 @@ function PrivateRoute(props) {
 };
 
 export default PrivateRoute;
+
