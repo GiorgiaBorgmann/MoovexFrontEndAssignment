@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import Card from './Card'
+import './posts.css'
 
 export default function Posts() {
     const [posts, setPosts] = useState([])
@@ -25,22 +26,22 @@ export default function Posts() {
 
     if (posts && showPosts === true) {
         return (
-            <div>
+            <div className='container-posts'>
                 <button onClick={handleSavedPost}>Save Posts</button>
                 <button onClick={handlePost}>Posts</button>
                 {posts.map((e) => {
-                    return <Card body={e.body} title={e.title} />
+                    return <Card body={e.body} title={e.title} key={e.id} />
                 })}
             </div>
         );
     }
     else {
         return (
-            <div>
+            <div className='container-posts'>
                 <button onClick={handleSavedPost}>Save Posts</button>
                 <button onClick={handlePost}>Posts</button>
                 {savedPosts.map((e) => {
-                    return <Card body={e.body} title={e.title} />
+                    return <Card body={e.body} title={e.title} key={e.id} />
                 })}
             </div>
         );

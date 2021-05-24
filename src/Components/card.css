@@ -5,7 +5,6 @@
     flex-flow: column;
     border: 1px solid #057496;
     padding:3%;
-    background-color: rgb(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 .card-container div{

@@ -1,0 +1,21 @@
+.container-posts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container-posts button{
+    background-color: #F5B5C0;
+    color: #057496;
+    border: none;
+    border-radius: 3px;
+    margin-top: 15px;
+    padding: 1%;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.container-posts button:hover{
+    background-color: #B3C7C3;
+}
