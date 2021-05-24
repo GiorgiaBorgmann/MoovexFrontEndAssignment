@@ -5,8 +5,8 @@ export default function Card(props) {
 
   return (
     <div className='card-container'>
-            <div>{props.title}</div>
-            <div>{props.body}</div>
+      <div> title: {props.title}</div>
+      <div>Information: {props.body}</div>
         </div>
   );
 }
