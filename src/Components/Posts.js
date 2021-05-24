@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import Card from './Card'
 
-export default function Example() {
+export default function Posts() {
   const [posts, setPosts] = useState([])
   const [savedPosts, setSavedPosts] = useState([])
+  const [showPosts, setShowPosts] = useState(false)
     useEffect(()=> {
         axios.get('https://jsonplaceholder.typicode.com/posts ')
                 .then((response) => {
@@ -14,11 +16,20 @@ export default function Example() {
                     console.log(error);
                 });
     },[])
-
+    const handleSavedPost = () =>{
+        setShowPosts(true)
+    }
+    const handlePost = () =>{
+        setShowPosts(false)
+    }
+    console.log(posts)
   return (
         <div>
-            <button>Save Posts</button>
-            <button>Posts</button>
+            <button onClick={handleSavedPost}>Save Posts</button>
+            <button onClick={handlePost}>Posts</button>
+            {posts.map((post)=>{
+                <Card body={post.body} title={post.title}/>
+            })}
         </div>
   );
 }
